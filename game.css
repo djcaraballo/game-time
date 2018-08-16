@@ -22,12 +22,12 @@ h1 {
   border: 2px groove #FFF;
   border-radius: 50px;
   color: #FFFFFF;
-  /*margin: 20px;*/
 }
 
 .start-btn:hover {
   color:;
   background: radial-gradient(#20839B, #20839B, #FFFFFF);
+  cursor: pointer;
 }
 
 .btn-container {
