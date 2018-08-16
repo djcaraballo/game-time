@@ -6,6 +6,8 @@ body {
 h1 {
   color: white;
   text-align: center;
+  font-family: 'Orbitron', sans-serif;
+
 }
 
 #game {
@@ -22,6 +24,8 @@ h1 {
   border: 2px groove #FFF;
   border-radius: 50px;
   color: #FFFFFF;
+  font-family: 'Orbitron', sans-serif;
+
 }
 
 .start-btn:hover {
