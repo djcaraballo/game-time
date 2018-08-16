@@ -13,3 +13,32 @@ h1 {
   margin: auto;
   display: block;
 }
+
+.start-btn {
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(#000000, #000000, #FFFFFF);
+  position: relative;
+  border: 2px groove #FFF;
+  border-radius: 50px;
+  color: #FFFFFF;
+  /*margin: 20px;*/
+}
+
+.start-btn:hover {
+  color:;
+  background: radial-gradient(#20839B, #20839B, #FFFFFF);
+}
+
+.btn-container {
+  width: 110px;
+  height: 110px;
+  background: #FFFFFF;
+  border: 4px ridge #7d7f81;
+  border-radius: 62.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto;
+  color: #FFFFFF;
+}
