@@ -49,4 +49,11 @@ describe('GamePiece', () => {
   // it('should collide with walls', () => {})
   // it('should be able to move', () => {})
   // it('should be able to changeDirection', () => {})
+
+  it (‘should have a default static position, () => {
+    const game = new Game(x, y);
+
+    assert.equal(this.x, x)
+    assert.equal(this.y, y)
+    })
 })
