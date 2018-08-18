@@ -16,6 +16,7 @@ h1 {
 }
 
 #game {
+  background: #C2DFEE;
   border: 1px dashed;
   display: block;
   margin: auto;
