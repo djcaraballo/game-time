@@ -1,37 +1,46 @@
 body {
   background: url(assets/tron_legacy_poster.jpg) no-repeat; 
   background-size: cover;
+  display: grid;
+  grid-template-columns: 25% 50% 25% ;
+  grid-template-rows: 10% 30% 30% 30%;
 }
 
+/*HEADER STYLING*/
 h1 {
   color: white;
-  text-align: center;
   font-family: 'Orbitron', sans-serif;
-
+  grid-row: 1/2;
+  grid-column: 2/3;
+  text-align: center;
 }
 
 #game {
   border: 1px dashed;
-  margin: auto;
   display: block;
+  margin: auto;
+  grid-row: 2/4;
+  grid-column: 2/3;
 }
 
 .start-btn {
-  width: 100px;
-  height: 100px;
   background: radial-gradient(#000000, #000000, #FFFFFF);
-  position: relative;
   border: 2px groove #FFF;
   border-radius: 50px;
   color: #FFFFFF;
   font-family: 'Orbitron', sans-serif;
-
+  height: 100px;
+  position: relative;
+  width: 100px;
 }
 
 .start-btn:hover {
-  color:;
   background: radial-gradient(#20839B, #20839B, #FFFFFF);
   cursor: pointer;
+}
+
+.start-btn:focus {
+  outline: 0;
 }
 
 .btn-container {

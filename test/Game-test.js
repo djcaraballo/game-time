@@ -22,4 +22,16 @@ describe('Game', () => {
   it.skip('should collide with walls', () => {})
   it.skip('should be able to move', () => {})
   it.skip('should be able to changeDirection', () => {})
+
+  it (‘should have a default status of off, () => {
+    const game = new Game();
+
+    assert.equal(this.gameOn, false) 
+    })
+
+  it (‘should toggle game status’, () => {
+    const game = new Game ();
+    
+    assert.equal(this.gameOn, true)
+    })
 })
