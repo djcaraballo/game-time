@@ -12,13 +12,13 @@ describe('Block', () => {
     assert.deepEqual(block.width, 10);
   })  
 
-  it(‘should start off with no path’, () => {
+  it('should start off with no path', () => {
     const player = new Block();
 
     assert.equal(player.path, []);
   })
 
-  it(‘should create a path when x and y coordinates change’, () => {
+  it('should create a path when x and y coordinates change', () => {
     const player = new Block();
     
     assert.equal(player.path, [])
