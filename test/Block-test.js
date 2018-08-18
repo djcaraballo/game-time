@@ -1,5 +1,14 @@
 const { assert } = require('chai');
+// const Index = require('../lib/index.js')
 const Block = require('../lib/Block.js')
+const Game = require('../lib/Game.js')
+
+const ctx = {
+  canvas: {
+    width: 300,
+    height: 300
+  }
+}
 
 describe('Block', () => {
   let block;
@@ -15,13 +24,14 @@ describe('Block', () => {
   it('should start off with no path', () => {
     const player = new Block();
 
-    assert.equal(player.path, []);
+    assert.deepEqual(player.path, []);
   })
 
   it('should create a path when x and y coordinates change', () => {
     const player = new Block();
+    const game = new Game();
     
-    assert.equal(player.path, [])
+    assert.deepEqual(player.path, [])
 
     game.animate()
     assert.deepEqual(player.path.length, 1)
