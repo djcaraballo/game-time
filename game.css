@@ -15,8 +15,13 @@ h1 {
   text-align: center;
 }
 
+.digital-font{
+  font-family: 'Press Start 2P', cursive;
+  color: orange;
+}
+
 #game {
-  background: #C2DFEE;
+  background: #316A7D;
   border: 1px dashed;
   display: block;
   margin: auto;
