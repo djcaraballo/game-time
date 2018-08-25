@@ -28,10 +28,10 @@ describe('Game', () => {
 
   })
   
-  it.skip('should take properties', () => {})
-  it.skip('should collide with walls', () => {})
-  it.skip('should be able to move', () => {})
-  it.skip('should be able to changeDirection', () => {})
+  // it.skip('should take properties', () => {})
+  // it.skip('should collide with walls', () => {})
+  // it.skip('should be able to move', () => {})
+  // it.skip('should be able to changeDirection', () => {})
 
   it.skip('should have a default status of off', () => {
     const game = new Game();
@@ -45,7 +45,6 @@ describe('Game', () => {
     assert.equal(this.gameOn, true)
   })
 
-  it.skip('should end game if player collides wth wall')
   it.skip('should end game if player collides with own trail')
   it.skip('should end game if player collides with other trail')
   it.skip('should set game Over to true if end game is called')
