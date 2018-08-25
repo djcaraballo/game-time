@@ -24,7 +24,7 @@ describe('Game', () => {
 
     assert.equal(block1.isCollidingWithWall(300, 300), true);
     game.handleBlock(block1);
-    assert.IsTrue(game.gameOver, true)
+    assert.equal(game.gameOver, true)
 
   })
   
