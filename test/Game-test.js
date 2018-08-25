@@ -34,4 +34,13 @@ describe('Game', () => {
     
     assert.equal(this.gameOn, true)
   })
+
+  it.skip('should end game if player collides wth wall')
+  it.skip('should end game if player collides with own trail')
+  it.skip('should end game if player collides with other trail')
+  it.skip('should set game Over to true if end game is called')
+  it.skip('should toggle paused state if togglePause is called')
+  it.skip('should change Direction of path on key press')
+  // create an event object (let event = {key: 'ArrowRight'}
+  // assert.equal(game.blocks[1].x = the coordinate it should have when arrow right is pressed)
 })
