@@ -2,8 +2,10 @@
 const { assert } = require('chai');
 const Game = require('../lib/Game');
 const Block = require('../lib/Block');
+
 const PathUnit = require('../lib/GamePiece');
 // const index = require('../lib/index')
+
 
 //this is a fake context to replace the one from the game in order to run the test.
 const ctx = {
@@ -62,7 +64,9 @@ describe('Game', () => {
     const game = new Game ();
     
     assert.equal(this.gameOn, true)
-  })
+  }) 
+
+  // it.skip('should take properties', () => {})  
 
   it('should end game if player collides with other trail', () => {
     const game = new Game(ctx);
