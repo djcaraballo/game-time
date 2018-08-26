@@ -36,7 +36,7 @@ h1 {
 
 #game {
   background: #013B66;
-  border: 1px dashed;
+  border: 3px groove;
   display: block;
   margin: 0 auto;
   grid-row: 2/3;
