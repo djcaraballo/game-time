@@ -131,16 +131,101 @@ describe('Game', () => {
   })
 
   it('should toggle paused state if togglePause is called', () => {
-    const game = new Game(ctx)
+    const game = new Game(ctx);
     assert.equal(game.paused, false);
 
     game.togglePause();
     assert.equal(game.paused, true);
   })
+})  
 
-  it('should change Direction of path on key press', () => {
-    const game = new Game(ctx)
-  // create an event object (let event = {key: 'ArrowRight'}
-  // assert.equal(game.blocks[1].x = the coordinate it should have when arrow right is pressed)    
+describe('Game', () => {
+  it('should change direction when arrow right is pressed', () => {
+    const game = new Game(ctx);
+    const event = {key: 'ArrowRight', preventDefault: () => {return null}};
+    assert.equal(game.playerOne.dx, 1);
+    assert.equal(game.playerOne.dy, 0);
+    
+    game.handleKeyPress(event);
+    assert.equal(game.playerOne.dx, 1);
+    assert.equal(game.playerOne.dy, 0); 
   })
+
+  it('should not change direction when arrow left is pressed if moving to the right', () => {
+    const game = new Game(ctx);
+    const event = {key: 'ArrowLeft', preventDefault: () => {return null}};
+    assert.equal(game.playerOne.dx, 1);
+    assert.equal(game.playerOne.dy, 0);
+    
+    game.handleKeyPress(event);
+    assert.equal(game.playerOne.dx, 1);
+    assert.equal(game.playerOne.dy, 0); 
+  })
+
+  it('should change direction when arrow down is pressed', () => {
+    const game = new Game(ctx);
+    const event = {key: 'ArrowDown', preventDefault: () => {return null}};
+    assert.equal(game.playerOne.dx, 1);
+    assert.equal(game.playerOne.dy, 0);
+    
+    game.handleKeyPress(event);
+    assert.equal(game.playerOne.dx, 0);
+    assert.equal(game.playerOne.dy, 1); 
+  })
+
+  it('should change direction when arrow up is pressed', () => {
+    const game = new Game(ctx);
+    const event = {key: 'ArrowUp', preventDefault: () => {return null}};
+    assert.equal(game.playerOne.dx, 1);
+    assert.equal(game.playerOne.dy, 0);
+    
+    game.handleKeyPress(event);
+    assert.equal(game.playerOne.dx, 0);
+    assert.equal(game.playerOne.dy, -1); 
+  })
+
+  it('should not change direction when D is pressed if moving to the left', () => {
+    const game = new Game(ctx);
+    const event = {key: 'd', preventDefault: () => {return null}};
+    assert.equal(game.playerTwo.dx, -1);
+    assert.equal(game.playerTwo.dy, 0);
+    
+    game.handleKeyPress(event);
+    assert.equal(game.playerTwo.dx, -1);
+    assert.equal(game.playerTwo.dy, 0); 
+  })
+
+  it('should change direction when A is pressed', () => {
+    const game = new Game(ctx);
+    const event = {key: 'a', preventDefault: () => {return null}};
+    assert.equal(game.playerTwo.dx, -1);
+    assert.equal(game.playerTwo.dy, 0);
+    
+    game.handleKeyPress(event);
+    assert.equal(game.playerTwo.dx, -1);
+    assert.equal(game.playerTwo.dy, 0); 
+  })
+
+  it('should change direction when S is pressed', () => {
+    const game = new Game(ctx);
+    const event = {key: 's', preventDefault: () => {return null}};
+    assert.equal(game.playerTwo.dx, -1);
+    assert.equal(game.playerTwo.dy, 0);
+    
+    game.handleKeyPress(event);
+    assert.equal(game.playerTwo.dx, 0);
+    assert.equal(game.playerTwo.dy, 1); 
+  })
+
+  it('should change direction when W is pressed', () => {
+    const game = new Game(ctx);
+    const event = {key: 'w', preventDefault: () => {return null}};
+    assert.equal(game.playerTwo.dx, -1);
+    assert.equal(game.playerTwo.dy, 0);
+    
+    game.handleKeyPress(event);
+    assert.equal(game.playerTwo.dx, 0);
+    assert.equal(game.playerTwo.dy, -1); 
+  })
+
 })
