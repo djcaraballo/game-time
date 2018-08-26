@@ -107,7 +107,13 @@ describe('Game', () => {
     assert.equal(game.paused, true);
   })
 
-  it.skip('should change Direction of path on key press')
+  it.skip('should change Direction of path on key press', () => {
+
+    const game = new Game(ctx)
+    
+
+    
+  })
   // create an event object (let event = {key: 'ArrowRight'}
   // assert.equal(game.blocks[1].x = the coordinate it should have when arrow right is pressed)
 })
