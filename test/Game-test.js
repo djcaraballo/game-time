@@ -1,7 +1,7 @@
 // Game-test.js
 const { assert } = require('chai');
 const Game = require('../lib/Game');
-const Block = require('../lib/Block');
+const Player = require('../lib/Player');
 
 const PathUnit = require('../lib/GamePiece');
 
@@ -23,22 +23,22 @@ describe('Game', () => {
     assert.isObject(game);
   });
 
-  it('should end the game if block collides with wall', () => {
+  it('should end the game if player collides with wall', () => {
     const game = new Game(ctx);
-    const block1 = new Block (300, 30, 10, 10);
+    const player1 = new Player (300, 30, 10, 10);
     assert.equal(game.gameOver, false);
-    assert.equal(block1.isCollidingWithWall(300, 300), true);
+    assert.equal(player1.isCollidingWithWall(300, 300), true);
 
-    game.handleBlock(block1);
+    game.handlePlayer(player1);
     assert.equal(game.gameOver, true);
   });
   
   it('should end game if player collides with own trail', () => {
     const game = new Game(ctx);
-    const block1 = new Block (39, 30, 10, 10);
+    const player1 = new Player (39, 30, 10, 10);
     assert.equal(game.gameOver, false);
 
-    block1.path = [ 
+    player1.path = [ 
       {x: 38, y: 30, width: 10, height:10}, 
       {x: 38, y: 30, width: 10, height:10}, 
       {x: 38, y: 30, width: 10, height:10}, 
@@ -63,9 +63,9 @@ describe('Game', () => {
       {x: 38, y: 30, width: 10, height:10}
       ];
 
-    assert.equal(block1.isCollidingWithOwnPath(block1.path), true);
+    assert.equal(player1.isCollidingWithOwnPath(player1.path), true);
 
-    game.handleBlock(block1);
+    game.handlePlayer(player1);
     assert.equal(game.gameOver,  true)
   })
   
@@ -84,12 +84,12 @@ describe('Game', () => {
 
   it('should end game if player collides with opponent trail', () => {
     const game = new Game(ctx);
-    const block1 = new Block (38, 30, 10, 10);
-    const block2 = new Block (25, 55, 10, 10);
+    const player1 = new Player (38, 30, 10, 10);
+    const player2 = new Player (25, 55, 10, 10);
     assert.equal(game.gameOver, false);
 
-    block1.path = []
-    block2.path = [ 
+    player1.path = []
+    player2.path = [ 
       {x: 38, y: 30, width: 10, height:10}, 
       {x: 38, y: 30, width: 10, height:10}, 
       {x: 38, y: 30, width: 10, height:10}, 
@@ -114,11 +114,11 @@ describe('Game', () => {
       {x: 38, y: 30, width: 10, height:10}
       ];
 
-    assert.equal(block1.isCollidingWithOpponentPath(block1.path, block2.path), true);
+    assert.equal(player1.isCollidingWithOpponentPath(player1.path, player2.path), true);
 
-    game.blocks = [block1, block2];
+    game.players = [player1, player2];
 
-    game.handleBlock(block1);
+    game.handlePlayer(player1);
     assert.equal(game.gameOver, true);
   })
 
