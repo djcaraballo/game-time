@@ -2,7 +2,7 @@ body {
   background: url(assets/tron-background.jpg) no-repeat; 
   background-size: cover;
   display: grid;
-  grid-template-columns: 20% 60% 20% ;
+  grid-template-columns: 25% 50% 25% ;
   grid-template-rows: 15% 70% 15%;
 }
 
@@ -84,5 +84,5 @@ h1 {
 
 .directions-container {
   grid-column: 3/4;
-  grid-row: 1/5;
+  grid-row: 1/4;
 }
