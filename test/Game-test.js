@@ -14,6 +14,15 @@ const ctx = {
 }
 
 describe('Game', () => {
+  it('should be a function', () => {
+    assert.isFunction(Game);
+  });
+
+  it('should instantiate a new game', () => {
+    const game = new Game();
+    assert.isObject(game);
+  });
+
   it('should end the game if block collides with wall', () => {
     const game = new Game(ctx);
     const block1 = new Block (300, 30, 10, 10);
@@ -21,8 +30,8 @@ describe('Game', () => {
     assert.equal(block1.isCollidingWithWall(300, 300), true);
 
     game.handleBlock(block1);
-    assert.equal(game.gameOver, true)
-  })
+    assert.equal(game.gameOver, true);
+  });
   
   it('should end game if player collides with own trail', () => {
     const game = new Game(ctx);
