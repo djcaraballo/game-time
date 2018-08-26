@@ -95,8 +95,18 @@ describe('Game', () => {
 
     assert.equal(game.gameOver, true)
   })
-  
-  it.skip('should toggle paused state if togglePause is called')
+
+  it('should toggle paused state if togglePause is called', () => {
+
+    const game = new Game(ctx)
+
+    assert.equal(game.paused, false);
+
+    game.togglePause();
+
+    assert.equal(game.paused, true);
+  })
+
   it.skip('should change Direction of path on key press')
   // create an event object (let event = {key: 'ArrowRight'}
   // assert.equal(game.blocks[1].x = the coordinate it should have when arrow right is pressed)
